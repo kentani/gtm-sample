@@ -1,43 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-
-    <title>gtm-sample</title>
-
-    <!-- Google Tag Manager -->
-    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://sst-server-q26n63dypq-an.a.run.app/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KJZD3K5');</script> -->
-    <!-- End Google Tag Manager -->
-  </head>
-
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-
-  <body style="margin: 0px; overflow: hidden;">
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://sst-server-q26n63dypq-an.a.run.app/ns.html?id=GTM-KJZD3K5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- <div>
-      gtm-sample
-    </div>
-
-    <button
-      id="button1"
-      type="button"
-    >
-      ボタン1
-    </button> -->
-
-    <a-scene embedded arjs>
-      <a-marker type="pattern" url="https://kentani.github.io/gtm-sample/pattern-teddy.patt">
-        <a-box position="0 -1 0" scale="1 1 1" color="grey"></a-box>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+</head>
+<body>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+  <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+  <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: '32.838865'; longitude: 129.836074" scale="10 10 10"></a-entity>
+</a-scene>
+</body>
 </html>
