@@ -5,21 +5,23 @@
     <title>gtm-sample</title>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://sst-server-q26n63dypq-an.a.run.app/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KJZD3K5');</script>
+    })(window,document,'script','dataLayer','GTM-KJZD3K5');</script> -->
     <!-- End Google Tag Manager -->
+
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
 
-  <body>
+  <body style="margin: 0px; overflow: hidden;">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://sst-server-q26n63dypq-an.a.run.app/ns.html?id=GTM-KJZD3K5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe src="https://sst-server-q26n63dypq-an.a.run.app/ns.html?id=GTM-KJZD3K5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
-    <div>
+    <!-- <div>
       gtm-sample
     </div>
 
@@ -28,6 +30,13 @@
       type="button"
     >
       ボタン1
-    </button>
+    </button> -->
+
+    <a-scene embedded arjs>
+      <a-marker type="pattern" url="pattern-teddy.patt">
+        <a-box position="0 -1 0" scale="1 1 1" color="grey"></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
