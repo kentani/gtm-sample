@@ -39,8 +39,9 @@
     <button
       id="event1"
       type="button"
+      onclick="show()"
     >
-      イベント1
+      イベント3を表示
     </button>
 
     <button
@@ -50,5 +51,22 @@
     >
       申込
     </button>
+
+    <button
+      id="event3"
+      type="button"
+      class="event3"
+      style="display: none;"
+      onclick="dataLayer.push({ 'event': 'reservation_complete' })"
+    >
+      イベント3
+    </button>
+
+    <script>
+      function show() {
+        const element = document.getElementById('event3');
+        element.style.display = 'initial';
+      }
+    </script>
   </body>
 </html>
